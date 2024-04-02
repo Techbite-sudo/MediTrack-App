@@ -11,13 +11,11 @@ const dummyOrders = [
       { id: 1, name: "Medication 1", quantity: 2 },
       { id: 2, name: "Medication 2", quantity: 1 },
     ],
-    total: 100,
   },
   {
     id: 2,
     date: "2023-04-15",
     items: [{ id: 1, name: "Medication 1", quantity: 1 }],
-    total: 50,
   },
   // Add more dummy orders as needed
 ];

@@ -1,18 +1,19 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { PRIMARY_COLOR, TEXT_COLOR } from "../constants/colors";
+import { formatDate, calculateTotal } from "../utils/helpers";
 
 const OrderCard = ({ order }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.date}>Order Date: {order.date}</Text>
+      <Text style={styles.date}>Order Date: {formatDate(order.date)}</Text>
       <Text style={styles.items}>Items:</Text>
       {order.items.map((item) => (
         <Text key={item.id} style={styles.item}>
           {item.name} x {item.quantity}
         </Text>
       ))}
-      <Text style={styles.total}>Total: {order.total}</Text>
+      <Text style={styles.total}>Total: {calculateTotal(order.items)}</Text>
     </View>
   );
 };
