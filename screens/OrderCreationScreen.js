@@ -41,6 +41,11 @@ const OrderCreationScreen = () => {
     return selectedItems.reduce((total, item) => total + item.quantity * 10, 0);
   };
 
+  const handlePlaceOrder = () => {
+    // Implement logic to place the order (can be done later when integrating with backend)
+    console.log("Order placed:", selectedItems);
+  };
+
   return (
     <View style={globalStyles.container}>
       <FlatList
@@ -55,7 +60,7 @@ const OrderCreationScreen = () => {
         contentContainerStyle={styles.listContainer}
       />
       <OrderSummary items={selectedItems} total={calculateTotal()} />
-      <Button title="Place Order" onPress={() => console.log("Order placed")} />
+      <Button title="Place Order" onPress={handlePlaceOrder} />
     </View>
   );
 };

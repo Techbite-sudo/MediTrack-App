@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { View, TextInput, Button, Text, StyleSheet } from "react-native";
 import { globalStyles } from "../constants/styles";
+import { useNavigation } from "@react-navigation/native";
 
 const AuthForm = ({ isLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigation = useNavigation();
 
   const handleSubmit = () => {
     // Handle authentication logic here
     console.log("Email:", email, "Password:", password);
+
+    // Assuming authentication is successful, navigate to another screen
+    navigation.navigate("Main"); 
   };
 
   return (

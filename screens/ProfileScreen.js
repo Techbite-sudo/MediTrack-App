@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { globalStyles } from "../constants/styles";
 import ProfileForm from "../components/ProfileForm";
 
+// Dummy user data
 const dummyUser = {
   name: "John Doe",
   email: "john.doe@example.com",

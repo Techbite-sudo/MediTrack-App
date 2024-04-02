@@ -1,4 +1,6 @@
 import { StyleSheet } from "react-native";
+import { BACKGROUND_COLOR, TEXT_COLOR } from "../constants/colors";
+
 
 export const globalStyles = StyleSheet.create({
   container: {
@@ -12,4 +14,4 @@ export const globalStyles = StyleSheet.create({
     marginVertical: 12,
   },
   // Add more global styles as needed
-});
+}); 

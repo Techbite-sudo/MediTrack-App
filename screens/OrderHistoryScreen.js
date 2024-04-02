@@ -3,6 +3,7 @@ import { View, FlatList, StyleSheet } from "react-native";
 import { globalStyles } from "../constants/styles";
 import OrderCard from "../components/OrderCard";
 
+// Dummy data for orders
 const dummyOrders = [
   {
     id: 1,
