@@ -4,6 +4,8 @@ import { View, FlatList, Button, StyleSheet } from "react-native";
 import { globalStyles } from "../constants/styles";
 import MedicationCard from "../components/MedicationCard";
 import { useNavigation } from "@react-navigation/native";
+import { useQuery } from '@apollo/client';
+import { GET_MEDICATIONS } from './graphql/queries';
 
 // Dummy data for medications
 const dummyMedications = [
@@ -24,14 +26,23 @@ const dummyMedications = [
 
 const MedicationListScreen = () => {
   const navigation = useNavigation();
+  const { loading, error, data } = useQuery(GET_MEDICATIONS);
 
   const handleOrderMedication = () => {
     // Navigate to the order creation screen
     navigation.navigate("OrderCreation");
   };
 
+  if (loading) return <Text>Loading...</Text>;
+  if (error) return <Text>Error: {error.message}</Text>;
+
   return (
     <View style={globalStyles.container}>
+      {/* <FlatList
+        data={data.medications}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => <MedicationCard medication={item} />}
+      /> */}
       <FlatList
         data={dummyMedications}
         keyExtractor={(item) => item.id.toString()}
